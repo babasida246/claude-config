@@ -1,0 +1,164 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm approve-builds:*)",
+      "Bash(pnpm --filter @qltb/api add tsx --save-dev)",
+      "Read(//tmp/**)",
+      "Bash(cmd /c \"dir E:\\\\GitHub\\\\QuanLyThietBi\\\\apps\\\\api\\\\node_modules\\\\tsx 2>&1\")",
+      "Bash(pnpm store:*)",
+      "Read(//e/.pnpm-store/v10/files/**)",
+      "Read(//e/.pnpm-store/v10/**)",
+      "Bash(curl -s -X POST http://localhost:3000/api/v1/auth/login -H \"Content-Type: application/json\" -d '{\"\"\"\"email\"\"\"\":\"\"\"\"admin@example.com\"\"\"\",\"\"\"\"password\"\"\"\":\"\"\"\"REDACTED\"\"\"\"}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/v1/auth/login -H \"Content-Type: application/json\" -d '{\"\"\"\"email\"\"\"\":\"\"\"\"root@system.local\"\"\"\",\"\"\"\"password\"\"\"\":\"\"\"\"REDACTED\"\"\"\"}')",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(''''Login OK:'''', d[''''data''''][''''user''''][''''role''''], d[''''data''''][''''user''''][''''email'''']\\)\")",
+      "Bash(find /e/GitHub/QuanLyThietBi -type f -path *cmdb* -name *.sql)",
+      "Bash(ls -1 /e/GitHub/QuanLyThietBi/packages/application/src/cmdb/*.ts)",
+      "Bash(sed 's/ \\(.*//')",
+      "Bash(grep -n \"config\\\\|ConfigFiles\" /e/GitHub/QuanLyThietBi/apps/web-ui/src/routes/\\\\\\(assets\\\\\\)/cmdb/cis/[id]/+page.svelte)",
+      "Bash(npx tsc:*)",
+      "Bash(ls e:/GitHub/QuanLyThietBi/packages/contracts/node_modules/.bin/tsc*)",
+      "Bash(node_modules/.bin/tsc --project tsconfig.json)",
+      "Bash(../../node_modules/.bin/tsc --project tsconfig.json)",
+      "Bash(../../node_modules/.bin/tsup src/main.ts --format esm --outDir dist --no-splitting)",
+      "Bash(grep -n \"config-files\\\\|configFiles\\\\|CmdbConfigFilesPanel\" e:/GitHub/QuanLyThietBi/apps/web-ui/src/routes/\\\\\\(assets\\\\\\)/cmdb/cis/[id]/+page.svelte)",
+      "Bash(pnpm test:e2e)",
+      "Bash(node -e \"console.log\\(new Date\\(\\).toLocaleDateString\\(''vi-VN'', {day:''2-digit'',month:''2-digit'',year:''numeric''}\\)\\)\")",
+      "Bash(grep -r \"admin.*policy\\\\|policy.*admin\\\\|slug.*admin\\\\|analytics:read\\\\|security:read\\\\|automation:read\\\\|integrations:read\" e:/GitHub/QuanLyThietBi/db/migrations/ --include=*.sql -l)",
+      "Bash(grep -B20 slug.*=.*''admin'' e:/GitHub/QuanLyThietBi/db/migrations/050_rbac_permissions.sql)",
+      "Bash(head -5 e:/GitHub/QuanLyThietBi/apps/web-ui/src/routes/\\\\\\(assets\\\\\\)/analytics/+page.svelte e:/GitHub/QuanLyThietBi/apps/web-ui/src/routes/\\\\\\(assets\\\\\\)/security/+page.svelte)",
+      "Bash(grep -r \"policy_assignments\\\\|DENY\" e:/GitHub/QuanLyThietBi/db/seed*.sql)",
+      "Bash(python -c \"import ast; ast.parse\\(open\\(''solar_flet_app.py''\\).read\\(\\)\\); print\\(''Syntax OK''\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\(''solar_system/sems_portal_crawler.py''\\).read\\(\\)\\); print\\(''Syntax OK''\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\(''solar_flet_app.py''\\).read\\(\\)\\); print\\(''App Syntax OK''\\)\")",
+      "Bash(npm start:*)",
+      "Bash(echo \"Server PID: $!\")",
+      "Bash(curl -s http://localhost:3000/health)",
+      "Bash(node --input-type=module)",
+      "Bash(uv:*)",
+      "Bash(pnpm:*)",
+      "Bash(pytest:*)",
+      "Bash(ruff:*)",
+      "Bash(mypy:*)",
+      "Bash(alembic:*)",
+      "Bash(docker*)",
+      "Bash(make:*)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git stash *)",
+      "Bash(Get-ChildItem -Path \"E:\\\\GitHub\\\\ai proxy\\\\frontend\" -Recurse -Force)",
+      "Bash(Select-Object FullName, PSIsContainer)",
+      "Bash(ConvertTo-Csv -NoTypeInformation)",
+      "Bash(Select-Object -Skip 1)",
+      "Bash(Head -100)",
+      "Bash(C:/Users/huyit/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/scripts/start-server.sh *)",
+      "Bash(C:/Users/huyit/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/skills/brainstorming/scripts/start-server.sh *)",
+      "Bash(npx vitest *)",
+      "Bash(npx -y tailwindcss --version)",
+      "WebFetch(domain:example.com)",
+      "Bash(findstr \"radix\")",
+      "Bash(git commit *)"
+    ],
+    "deny": [],
+    "defaultMode": "auto"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
+      },
+      {
+        "matcher": "Grep|Glob|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"C:/Users/huyit/.claude/hooks/gitnexus/gitnexus-hook.cjs\"",
+            "timeout": 10,
+            "statusMessage": "Enriching with GitNexus graph context..."
+          }
+        ]
+      }
+    ]
+  },
+  "worktree": {
+    "baseRef": "fresh"
+  },
+  "enableWorkflows": true,
+  "statusLine": {
+    "type": "command",
+    "command": "bash C:/Users/huyit/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": false,
+    "superpowers@claude-plugins-official": true,
+    "context7@claude-plugins-official": false,
+    "code-review@claude-plugins-official": false,
+    "code-simplifier@claude-plugins-official": false,
+    "github@claude-plugins-official": false,
+    "skill-creator@claude-plugins-official": false,
+    "playwright@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": false,
+    "claude-md-management@claude-plugins-official": false,
+    "ralph-loop@claude-plugins-official": false,
+    "typescript-lsp@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "claude-code-setup@claude-plugins-official": false,
+    "vercel@claude-plugins-official": true,
+    "supabase@claude-plugins-official": false,
+    "pr-review-toolkit@claude-plugins-official": false,
+    "pyright-lsp@claude-plugins-official": true,
+    "telegram@claude-plugins-official": false,
+    "agent-sdk-dev@claude-plugins-official": false,
+    "plugin-dev@claude-plugins-official": false,
+    "playground@claude-plugins-official": false,
+    "huggingface-skills@claude-plugins-official": false,
+    "remember@claude-plugins-official": true,
+    "mcp-server-dev@claude-plugins-official": false,
+    "postman@claude-plugins-official": false,
+    "discord@claude-plugins-official": false
+  },
+  "effortLevel": "high",
+  "autoUpdatesChannel": "latest",
+  "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "auto",
+  "autoMode": {
+    "soft_deny": [
+      "$defaults",
+      "Bash(ssh *103.221.223.198*)",
+      "Bash(*infra/deploy.sh*)"
+    ],
+    "environment": [
+      "### Org-wide",
+      "**Organization**: None configured",
+      "**Cloud provider(s)**: None configured",
+      "**Repository visibility**: Private (babasida246/opsmind, verified via gh)",
+      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
+      "**Secrets management**: None configured — repo uses .env files (gitignored) with example templates (.env.example, .env.prod.example, backend/.env.test, frontend/.env.local.example)",
+      "**Default / protected branches**: Default branch is master; no protected branches or rulesets listed (gh query for rulesets was not queryable here)",
+      "**CI/CD deploy targets**: VPS via SSH (see infra/deploy.sh, VPS_SSH_HOST/VPS_APP_DIR in .env.example); frontend deployed to Vercel",
+      "**Network posture**: None configured",
+      "**Source control**: The babasida246/opsmind repo (private) and its origin remote (https://github.com/babasida246/opsmind.git) only",
+      "**Trusted internal domains**: None configured",
+      "**Trusted cloud buckets**: None configured",
+      "**Key internal services**: VPS at host referenced by VPS_SSH_HOST (opsmind-backend service via journalctl); Qdrant (episodic memory), Redis (semantic cache/Celery broker), PostgreSQL, n8n workflow engine — all local/docker-compose services for this project",
+      "**Internal package registry**: None configured",
+      "**Sensitive data locations & audiences**: .env and .env.* files (gitignored, except .env.example), backend/.env, backend/.env.test, frontend/.env.local, docker-compose.prod.yml, SSH key ~/.ssh/id_ed25519_aiproxy (passphrase-protected), ADMIN_PASSWORD/SECRET_KEY/REFRESH_SECRET_KEY/TOTP_ENCRYPTION_KEY and other credential env vars — share only with audiences cleared at the named+specifics bar",
+      "**Data retention / declassification**: None configured",
+      "**Sensitive remote targets**: any namespace/host/container carrying prod or production as a whole word/segment; docker-compose.prod.yml and VPS production deploy target",
+      "**Protected deployment namespaces / environments**: production VPS deploy target (bash infra/deploy.sh, opsmind-backend service) — treat as sensitive",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries prod or production as a whole word or name segment",
+      "### User-specific",
+      "**Primary use of Claude Code**: software development (OpsMind — multi-model AI orchestration platform)",
+      "**Trusted repo**: E:\\GitHub\\ai-proxy (babasida246/opsmind), private — confidential material (secrets, sensitive data) is never cleared into it by visibility alone",
+      "**Org-specific CLIs**: rtk (Rust Token Killer, token-optimized shell output proxy), gitnexus (code intelligence CLI, npx gitnexus analyze/status/wiki)",
+      "routine under E:\\GitHub\\ai-proxy\\ prefix for build/test/lint/dev commands (make, uv, pnpm, docker-compose) is standard project workflow"
+    ]
+  }
+}
